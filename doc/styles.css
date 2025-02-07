@@ -22,11 +22,16 @@ input,select{vertical-align:middle}
 html, body {
     font-family: 'DM Sans', sans-serif;
 
-    height: 100vh;  /* Asegura que el contenedor ocupe toda la pantalla */
-    margin: 0;
+    min-height: 100vh;  /* Asegura que el contenedor ocupe toda la pantalla */
     display: flex; /* Centra el contenido de body */
+    flex-direction: column; /* Centra el contenido de body */
     justify-content: center; /* Centra horizontalmente */
     align-items: center; /* Centra verticalmente */
+
+    overflow-y: auto; 
+
+
+   
 
     background-color: rgb(177, 186, 199);
 }
@@ -35,6 +40,13 @@ html, body {
 .container-grid{
 
     position: relative;
+
+    min-width: 800px;
+    max-width: 1700px;
+
+    min-height: 600px;
+    max-height: 800px;
+
 
     
     display: grid;
@@ -52,62 +64,6 @@ html, body {
                 
 }
 
-.box-1-2{ 
-    grid-area: create-write; 
-
-    display: flex;
-    flex-direction: column;
-
-    gap: 20px;
-
-    .box-1{
-        flex: 1;
-        background-color: hsl(31, 66%, 93%);
-
-        .quicker-cursive{
-            color: hsl(256, 67%, 59%);
-            font-style: italic;
-        }
-    }
-    .box-2{
-        flex: 1;
-        background-color: hsl(39, 100%, 71%);
-    }
-
-    .box-1, .box-2{
-        border-radius: 10px;
-        padding: 20px;
-    }
-
-}
-.box-3 { 
-    grid-area: social; 
-    background-color: hsl(256, 67%, 59%); /* Light Blue */
-}
-.box-4 { 
-    grid-area: manage; 
-    background-color: white;
-
-}
-.box-5 { 
-    grid-area: faster; 
-    background-color: white;
-
-}
-.box-6 { 
-    grid-area: maintain; 
-    background-color: hsl(39, 100%, 71%); /* Light Yellow */
-}
-.box-7 { 
-    grid-area: schedule; 
-    background-color: hsl(254, 88%, 90%); /* Light Purple */
-}
-.box-8 { 
-    grid-area: grow; 
-    background-color: hsl(256, 67%, 59%); /* Light Pink */
-}
-
-
 
 .box-3,
 .box-4,
@@ -121,10 +77,196 @@ html, body {
 
 
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
+    overflow: hidden;
+
+    
+
 }
+
+img{
+    max-width: 100% ;
+}
+
+h1{
+    line-height: 0.9; /* Espacio entre líneas (proporcional al tamaño de fuente) */
+    letter-spacing: 0; /* Espacio entre letras */
+    font-weight: 500;
+}
+
+p{
+    font-size: 17px;
+    line-height: 0.9;
+    font-weight: 400;
+}
+
+.box-1-2{ 
+
+
+    h1{
+        font-size: 2rem;
+        font-weight: 500;
+        color: hsl(0, 0%, 7%);
+    }
+    
+    grid-area: create-write; 
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+
+    .box-1{
+        flex: 1;
+        background-color: hsl(31, 66%, 93%);
+
+        gap: 20px;
+
+        .quicker-cursive{
+            color: hsl(256, 67%, 59%);
+            font-style: italic;
+        }
+    }
+    .box-2{
+        flex: 1;
+
+        justify-content: space-between;
+    
+
+        background-color: hsl(39, 100%, 71%);
+    }
+
+
+
+}
+
+.box-1, .box-2{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+
+.box-3 { 
+    grid-area: social; 
+    color: white;
+    background-color: hsl(256, 67%, 59%); /* Light Blue */
+
+    text-align: center;
+
+    gap: 4px;
+
+    h1{
+        font-size: 3rem;
+    }
+
+    span{
+        color: hsl(39, 100%, 71%);
+    }
+
+    img{
+        margin-top: 20px;
+        max-width: 40%;
+    }
+
+}
+
+.box-4 { 
+    grid-area: manage; 
+    background-color: white;
+
+    justify-content: space-between;
+
+    h1{
+        font-size: 1.7rem;
+        
+    }
+
+    img{
+        max-width: 150%;
+        margin-right: -90px;
+    }
+
+}
+
+.box-5 { 
+    grid-area: faster; 
+    background-color: white;
+
+    justify-content: space-between;
+
+
+
+    span{
+        font-size: 3rem;
+    }
+
+}
+
+.box-6 { 
+    grid-area: maintain; 
+
+    justify-content: space-between;
+
+    h1{
+        font-size: 1.7rem;
+    }
+
+    img{
+        margin-bottom: -70px;
+    }
+
+
+    background-color: hsl(39, 100%, 71%); /* Light Yellow */
+}
+
+.box-7 { 
+    grid-area: schedule; 
+
+    background-color: hsl(254, 88%, 90%); /* Light Purple */
+
+    h1{
+        font-size: 1.7rem;
+    }
+
+    justify-content: space-evenly;
+
+    padding-left: 30px;
+
+    img{
+        max-width: 160%;
+        margin-right: -90px;
+    }
+    
+}
+
+.box-8 { 
+    grid-area: grow; 
+    background-color: hsl(256, 67%, 59%); /* Light Pink */
+
+    color: white;
+
+    flex-direction: row;
+
+    gap: 5px;
+    
+    img{
+        max-height: 100%;
+    }
+    h1{
+        font-size: 1.9rem;
+    }
+}
+
+
+
+
 
 .attribution { 
     font-size: 11px; 
@@ -136,6 +278,70 @@ html, body {
 
 .attribution a { color: hsl(228, 45%, 44%); }
 
-p{
-    font-size:18px;
+@media (max-width: 900px) {
+
+
+
+
+    .attribution { 
+        position:fixed; 
+    }
+
+    .container-grid{
+
+        grid-template-areas: "social"
+                             "manage"
+                             "maintain"
+                             "schedule"
+                             "grow"
+                             "faster"                             
+                             "create-write";
+    
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+
+        gap: 10px;
+
+        height: auto;
+        max-height: 90vh;
+
+
+        min-width: 300px;
+        width: 90%;
+    }
+
+
+    .box-1-2,
+    .box-3,
+    .box-4,
+    .box-5,
+    .box-6,
+    .box-7,
+    .box-8 {
+
+
+
+        border-radius: 18px;
+        
+
+        gap: 10px;
+       
+        p{
+            font-size: 1.5rem;
+        }
+
+        img{
+            max-width: 60%;
+            margin: auto;
+        
+        }
+    
+        
+    }
+    .box-2{
+        gap: 20px;
+    }
+    .box-8{
+        flex-direction: column;
+    }
 }
