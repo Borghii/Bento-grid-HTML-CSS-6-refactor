@@ -33,7 +33,7 @@ html, body {
 
    
 
-    background-color: rgb(177, 186, 199);
+    background-color: rgb(224, 224, 224);
 }
 
 
@@ -281,11 +281,14 @@ p{
 @media (max-width: 900px) {
 
 
-
-
-    .attribution { 
-        position:fixed; 
+    body {
+        overflow: auto;
     }
+
+    .attribution{
+        position: fixed;
+    }
+
 
     .container-grid{
 
@@ -303,11 +306,13 @@ p{
         gap: 10px;
 
         height: auto;
-        max-height: 90vh;
+        max-height: none; /* Elimina la restricción de altura */
 
 
         min-width: 300px;
         width: 90%;
+
+        padding: 30px 0;
     }
 
 
