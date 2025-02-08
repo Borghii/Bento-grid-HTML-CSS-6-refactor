@@ -352,3 +352,10 @@ p{
         flex-direction: column;
     }
 }
+
+@media (max-width: 600px) {
+    img{
+        width: 200px !important;
+    }
+
+}
