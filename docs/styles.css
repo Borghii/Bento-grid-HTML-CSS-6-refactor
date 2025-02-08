@@ -336,10 +336,11 @@ p{
         }
 
         img{
-            max-width: 60%;
+            
+            width: 350px;
             height: auto;
             margin: auto;
-        
+
         }
     
         
